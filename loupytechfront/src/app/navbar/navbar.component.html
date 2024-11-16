@@ -1,0 +1,55 @@
+
+
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <img [src]="'/assets/img/logoloupy.png'" alt="Icon"
+       style="background-color: white; height: 70px;"/>
+
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    Menu
+  </div>
+
+
+
+
+  <li *ngIf='sessionStorage.getItem("role")==="CLIENT"' class="nav-item">
+    <a class="nav-link" [routerLink]="['/list-myreports/', sessionStorage.getItem('idAccount')]" routerLinkActive="active">
+      <i class="fas fa-fw fa-envelope-open-text"></i>
+      <span>My reports</span>
+    </a>
+  </li>
+  <li *ngIf='sessionStorage.getItem("role")==="ADMIN"' class="nav-item">
+    <a class="nav-link" routerLink="/list-users" routerLinkActive="active">
+      <i class="fas fa-fw fa-user-check"></i>
+      <span>Accounts</span>
+    </a>
+  </li>
+
+  <!-- Nav Item - Tables -->
+  <li *ngIf='sessionStorage.getItem("role")==="ADMIN"' class="nav-item">
+    <a class="nav-link" routerLink="/list-reports" routerLinkActive="active">
+      <i class="fas fa-fw fa-envelope-open-text"></i>
+      <span>Report</span>
+    </a>
+  </li>
+
+
+
+
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+
+
+</ul>
+
